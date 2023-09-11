@@ -38,7 +38,7 @@ long long MaxPairWiseProductWhile(std::vector<int> nums)
     long long result = 0;
     while(i!=j)
     {
-                long long curr_result = nums[i] * nums[j];
+        long long curr_result = (long long)nums[i] * nums[j];
         if(nums[i]>nums[j])
         {
             j--;
