@@ -20,11 +20,13 @@ int faster_fibonacci(int n)
     {
         return n;
     }
-    fibo.push_back(0);
-    fibo.push_back(1);
-    for(int i = n+1;i<n;i++)
-    {
-        fibo.push_back(fibo[0] + fibo[1]);
+    fibo[0] = 0;
+    fibo[1] = 1;
+    for(int i = 1;i<n;i++)
+    {   
+        int fibo_first = fibo[0];
+        fibo[0] = fibo[1];
+        fibo[1] = fibo[0] + fibo_first;
         
     }
     return fibo[1];
@@ -57,6 +59,6 @@ int main()
     std::vector<int> fibo_seq = return_fibonacci_sequence(n);
     std::cout << "The " + std::to_string(n) + "th " "element of fibonnaci sequence is "<<std::to_string(fibo) <<"\n";
     int fibo_faster= faster_fibonacci(n);
-    std::cout << "The " + std::to_string(n) + "th " "element of fibonnaci sequence is "<<std::to_string(fibo) <<"\n";
+    std::cout << "The " + std::to_string(n) + "th " "element of fibonnaci sequence is "<<std::to_string(fibo_faster) <<"\n";
     cout_fibonacci_sequence(fibo_seq);
 }
